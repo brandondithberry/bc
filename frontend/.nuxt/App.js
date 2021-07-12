@@ -5,10 +5,6 @@ import NuxtError from './components/nuxt-error.vue'
 import NuxtLoading from './components/nuxt-loading.vue'
 import NuxtBuildIndicator from './components/nuxt-build-indicator'
 
-import '..\\node_modules\\uikit\\dist\\css\\uikit.min.css'
-
-import '..\\node_modules\\uikit\\dist\\css\\uikit.css'
-
 import '..\\assets\\css\\main.css'
 
 import _6f6c098b from '..\\layouts\\default.vue'

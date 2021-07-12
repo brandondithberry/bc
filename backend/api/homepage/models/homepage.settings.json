@@ -22,6 +22,11 @@
       "repeatable": false,
       "component": "sections.hero",
       "required": true
+    },
+    "textBox": {
+      "type": "component",
+      "repeatable": true,
+      "component": "sections.text-box"
     }
   }
 }

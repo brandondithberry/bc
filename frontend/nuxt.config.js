@@ -13,19 +13,14 @@ export default {
     link: [
       {
         rel: "stylesheet",
-        href: "https://fonts.googleapis.com/css?family=Staatliches",
+        href: "https://fonts.googleapis.com/css?family=Arimo",
       },
     ],
   },
   /*
    ** Global CSS
    */
-  css: [
-    "uikit/dist/css/uikit.min.css",
-    "uikit/dist/css/uikit.css",
-    "@assets/css/main.css",
-  ],
-  plugins: [{ src: "~/plugins/uikit.js", ssr: false }],
+  css: ["@assets/css/main.css"],
   modules: ["@nuxtjs/markdownit", "@nuxtjs/strapi"],
   strapi: {
     url: strapiBaseUri,
