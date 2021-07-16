@@ -1,23 +1,37 @@
 [
   {
+    "name": "contact",
+    "path": "/contact",
+    "component": "C:\\\\Users\\\\brand\\\\Documents\\\\Drive\\\\Benefits Consulting\\\\frontend\\\\pages\\\\contact.vue",
+    "chunkName": "pages/contact",
+    "_name": "_1a2311bc"
+  },
+  {
     "name": "articles-slug",
     "path": "/articles/:slug?",
-    "component": "C:\\\\Users\\\\brand\\\\Documents\\\\Drive\\\\Code\\\\benefits-consulting\\\\frontend\\\\pages\\\\articles\\\\_slug.vue",
+    "component": "C:\\\\Users\\\\brand\\\\Documents\\\\Drive\\\\Benefits Consulting\\\\frontend\\\\pages\\\\articles\\\\_slug.vue",
     "chunkName": "pages/articles/_slug",
-    "_name": "_9e82a6e2"
+    "_name": "_c5c53ca2"
   },
   {
     "name": "categories-slug",
     "path": "/categories/:slug?",
-    "component": "C:\\\\Users\\\\brand\\\\Documents\\\\Drive\\\\Code\\\\benefits-consulting\\\\frontend\\\\pages\\\\categories\\\\_slug.vue",
+    "component": "C:\\\\Users\\\\brand\\\\Documents\\\\Drive\\\\Benefits Consulting\\\\frontend\\\\pages\\\\categories\\\\_slug.vue",
     "chunkName": "pages/categories/_slug",
-    "_name": "_518a3cd0"
+    "_name": "_bddfac20"
   },
   {
     "name": "index",
     "path": "/",
-    "component": "C:\\\\Users\\\\brand\\\\Documents\\\\Drive\\\\Code\\\\benefits-consulting\\\\frontend\\\\pages\\\\index.vue",
+    "component": "C:\\\\Users\\\\brand\\\\Documents\\\\Drive\\\\Benefits Consulting\\\\frontend\\\\pages\\\\index.vue",
     "chunkName": "pages/index",
-    "_name": "_7a594834"
+    "_name": "_cafc3558"
+  },
+  {
+    "name": "slug",
+    "path": "/:slug",
+    "component": "C:\\\\Users\\\\brand\\\\Documents\\\\Drive\\\\Benefits Consulting\\\\frontend\\\\pages\\\\_slug.vue",
+    "chunkName": "pages/_slug",
+    "_name": "_ce6977e8"
   }
 ]

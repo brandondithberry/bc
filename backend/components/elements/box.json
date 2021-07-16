@@ -1,0 +1,38 @@
+{
+  "collectionName": "components_elements_boxes",
+  "info": {
+    "name": "box",
+    "icon": "stop",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "paragraph": {
+      "type": "text"
+    },
+    "image": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images"
+      ],
+      "plugin": "upload",
+      "required": false,
+      "pluginOptions": {}
+    },
+    "buttons": {
+      "type": "component",
+      "repeatable": true,
+      "component": "elements.single-button"
+    },
+    "ovTopColor": {
+      "type": "string"
+    },
+    "ovBottomColor": {
+      "type": "string"
+    }
+  }
+}

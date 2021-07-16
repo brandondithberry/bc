@@ -2,56 +2,122 @@
   <div>
     <section
       :style="{
-        background: ' url(//localhost:1337' + homepage.hero.bgImage.url + ')',
+        background: 'url(//localhost:1337' + homepage.hero.image.url + ')',
         backgroundSize: '',
         backgroundPosition: '',
       }"
       class="banner"
     >
-      <div class="overlay">
+      <div
+        class="overlay"
+        :style="{
+          background:
+            'linear-gradient(' +
+            homepage.hero.ovTopColor +
+            ', ' +
+            homepage.hero.ovBottomColor +
+            ')',
+        }"
+      >
         <div class="container">
           <h1>{{ homepage.hero.title }}</h1>
           <nuxt-link
             v-for="btn in homepage.hero.buttons"
-            :key="btn.text"
-            :to="btn.url"
+            :key="btn.btnText"
+            :to="btn.btnLink"
             class="btn"
             tag="a"
-            >{{ btn.text }}
+            >{{ btn.btnText }}
           </nuxt-link>
         </div>
       </div>
     </section>
     <section
-      v-for="box in homepage.textBox"
-      :key="box.id"
       class="text-box"
       :style="{
-        background: '' + box.bgColor + '',
+        background: '' + homepage.textBox.bgColor + '',
       }"
     >
-      <div class="container">
-        <div v-if="box.position === 'left'" class="left">
-          <div class="text">
-            <h2>{{ box.heading }}</h2>
-            <p>{{ box.body }}</p>
-          </div>
-          <div class="image">
-            <img :src="`//localhost:1337${box.image.url}`" width="100%" />
-          </div>
+      <div v-if="homepage.textBox.position === 'left'" class="left">
+        <div class="text">
+          <h2>{{ homepage.textBox.heading }}</h2>
+          <h4>{{ homepage.textBox.body }}</h4>
         </div>
-        <div v-else class="right">
-          <div class="image">
-            <img :src="`//localhost:1337${box.image.url}`" width="100%" />
-          </div>
-          <div class="text">
-            <h2>{{ box.heading }}</h2>
-            <p>{{ box.body }}</p>
-          </div>
+        <div
+          :style="{
+            background:
+              'url(//localhost:1337' + homepage.textBox.image.url + ')',
+            backgroundSize: '',
+            backgroundPosition: '',
+          }"
+          class="image"
+        ></div>
+      </div>
+      <div v-else class="right">
+        <div
+          :style="{
+            background:
+              'url(//localhost:1337' + homepage.textBox.image.url + ')',
+            backgroundSize: '',
+            backgroundPosition: '',
+          }"
+          class="image"
+        ></div>
+        <div class="text">
+          <h2>{{ homepage.textBox.heading }}</h2>
+          <h4>{{ homepage.textBox.body }}</h4>
         </div>
       </div>
     </section>
-    <section></section>
+    <section class="grid">
+      <div
+        v-for="gr in homepage.grid"
+        :key="gr.id"
+        class="grid-item"
+        :style="{
+          color: '' + gr.textColor + '',
+          background: '' + gr.textBgColor + '',
+        }"
+      >
+        <div class="grid-text">
+          <img :src="`//localhost:1337${gr.icon.url}`" width="30%" />
+          <h2>{{ gr.title }}</h2>
+          <h4>{{ gr.paragraph }}</h4>
+        </div>
+      </div>
+    </section>
+    <section
+      :style="{
+        background: 'url(//localhost:1337' + homepage.cta.image.url + ')',
+        backgroundSize: '',
+        backgroundPosition: '',
+      }"
+      class="cta"
+    >
+      <div
+        class="overlay"
+        :style="{
+          background:
+            'linear-gradient(' +
+            homepage.cta.ovTopColor +
+            ', ' +
+            homepage.cta.ovBottomColor +
+            ')',
+        }"
+      >
+        <div class="container">
+          <h2>{{ homepage.cta.title }}</h2>
+          <nuxt-link
+            v-for="btn in homepage.cta.buttons"
+            :key="btn.btnText"
+            :to="btn.btnLink"
+            class="btn"
+            tag="a"
+            >{{ btn.btnText }}
+          </nuxt-link>
+        </div>
+      </div>
+    </section>
   </div>
 </template>
 

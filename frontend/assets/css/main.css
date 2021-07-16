@@ -22,6 +22,12 @@ h3 {
   line-height: 140%;
 }
 
+h4 {
+  font-size: 1.2rem;
+  line-height: 140%;
+  font-weight: normal;
+}
+
 a {
   text-decoration: none;
   color: inherit;
@@ -33,8 +39,8 @@ Buttons
 
 .btn {
   font-size: 1.1rem;
-  padding: 15px 25px;
-  background: #006030;
+  padding: 20px 30px;
+  background: #008040;
   color: white;
   border-radius: 3px;
   box-shadow: 0px 1px 5px #00000099;
@@ -46,7 +52,7 @@ Buttons
 }
 
 .btn:hover {
-  background: #003060 ;
+  background: #004080 ;
 }
 
 /********
@@ -64,7 +70,7 @@ Header
 
 header {
   padding: 10px;
-  background: #fafafa;
+  background: #fff;
 }
 
 header .container {
@@ -105,7 +111,7 @@ Banner
 
 .banner .overlay {
   background: linear-gradient(#00000000, #000000AA);
-  padding: 30rem 0px 5rem 0;
+  padding: 30rem 2rem 5rem 2rem;
 }
 
 .banner h1 {
@@ -115,35 +121,174 @@ Banner
 }
 
 /*****
+Hero
+******/
+
+.hero {
+  background-size: cover;
+  background-position: center;
+  color: white;
+}
+
+.hero .overlay {
+  background: linear-gradient(#00000000, #000000AA);
+  padding: 10rem 2rem 1rem 2rem;
+}
+
+.hero h1 {
+  max-width: 800px;
+  border-top: 5px solid #fff;
+  padding-top: 10px;
+}
+
+
+/*****
 Text Box
 ******/
 
-.text-box {
-  padding: 5rem 1rem;
-}
-
-.text-box .container {
-  max-width: 900px;
+.text-box .image {
+  background-size: cover;
+  background-position: center;
+  height: 100%;
+  width: 100%;
 }
 
 .text-box .right, .text-box .left {
   display: grid;
-  grid-template: auto / repeat(2, auto);
-  grid-gap: 50px;
+  grid-template: auto / repeat(2, 1fr);
   place-content: center;
   place-items: center;
 }
 
-.text-box .left .text {
-  margin-right: -5rem;
-  background: white;
-  padding: 2rem 3rem;
-  z-index: 2000;
+.text-box .text {
+  max-width: 600px;
+  padding: 10rem 2rem;
 }
 
-.text-box .right .text {
-  margin-left: -5rem;
-  background: white;
-  padding: 2rem 3rem;
-  z-index: 2000;
+
+/*****
+Grid
+******/
+
+.grid {
+  display: grid;
+  grid-template: auto / repeat(3, auto);
+  place-items: center;
+  place-content: center;
+}
+
+.grid-item {
+  display: grid;
+  place-content: center;
+  place-items: center;
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+}
+
+.grid-text {
+  padding: 5rem;
+}
+
+.grid h2 {
+  max-width: 800px;
+  padding-top: 10px;
+}
+
+/*****
+CTA
+******/
+
+.cta {
+  background-size: cover;
+  background-position: center;
+  color: white;
+}
+
+.cta .overlay {
+  background: linear-gradient(#00000000, #000000AA);
+  padding: 10rem 0;
+}
+
+.cta h2 {
+  max-width: 700px;
+  border-top: 5px solid #fff;
+  padding-top: 10px;
+  margin-bottom: 3rem;
+}
+
+/*****
+Body
+******/
+
+.body {
+  max-width: 640px;
+  padding: 5rem 2rem;
+  margin: 0 auto;
+}
+
+/*****
+Tables
+******/
+
+table {
+  text-align: left;
+  border-collapse: collapse;
+}
+
+tr {
+  border-bottom: 1px solid #ddd;
+}
+
+tr:nth-child(even) {
+  background: #f0f0f0;
+  margin: 0;
+  padding: 0;
+}
+
+th, td {
+  padding: 10px 20px;
+}
+
+/*****
+Footer
+******/
+
+footer {
+  padding: 10px;
+  background: #002050;
+}
+
+footer .container {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+footer nav ul {
+  display: flex;
+}
+
+footer nav li {
+  display: flex;
+  font-weight: normal;
+  font-size: 0.9rem;
+  transition: 0.3s ease;
+  color: #ffffff77;
+}
+
+footer nav li:not(:last-child) {
+  margin-right: 30px;
+}
+
+footer nav li:hover {
+  color: #ffffff;
+}
+
+footer h6 {
+  color: white;
+  font-weight: normal;
 }

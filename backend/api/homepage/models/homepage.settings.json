@@ -20,13 +20,22 @@
     "hero": {
       "type": "component",
       "repeatable": false,
-      "component": "sections.hero",
-      "required": true
+      "component": "elements.box"
     },
     "textBox": {
       "type": "component",
+      "repeatable": false,
+      "component": "elements.text-box"
+    },
+    "grid": {
+      "type": "component",
       "repeatable": true,
-      "component": "sections.text-box"
+      "component": "elements.grid"
+    },
+    "cta": {
+      "type": "component",
+      "repeatable": false,
+      "component": "elements.box"
     }
   }
 }

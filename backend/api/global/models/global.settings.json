@@ -46,7 +46,7 @@
     "HeaderMenu": {
       "type": "component",
       "repeatable": true,
-      "component": "sections.menu"
+      "component": "elements.menu"
     }
   }
 }

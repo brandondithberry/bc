@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_sections_single_buttons",
+  "info": {
+    "name": "Button",
+    "icon": "audio-description",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "btnText": {
+      "type": "string"
+    },
+    "btnLink": {
+      "type": "string"
+    }
+  }
+}
