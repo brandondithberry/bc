@@ -13,6 +13,7 @@ import { setContext, getLocation, getRouteData, normalizeError } from './utils'
 /* Plugins */
 
 import nuxt_plugin_cookieuniversalnuxt_716028ae from 'nuxt_plugin_cookieuniversalnuxt_716028ae' // Source: .\\cookie-universal-nuxt.js (mode: 'all')
+import nuxt_plugin_httpserver_1d0c2d73 from 'nuxt_plugin_httpserver_1d0c2d73' // Source: .\\http.server.js (mode: 'server')
 import nuxt_plugin_http_ea31f6ec from 'nuxt_plugin_http_ea31f6ec' // Source: .\\http.js (mode: 'all')
 import nuxt_plugin_strapi_4c644c69 from 'nuxt_plugin_strapi_4c644c69' // Source: .\\strapi.js (mode: 'all')
 import nuxt_plugin_markdownit_ae10cd90 from 'nuxt_plugin_markdownit_ae10cd90' // Source: .\\markdownit.js (mode: 'all')
@@ -42,12 +43,23 @@ Vue.component('NChild', NuxtChild)
 // Component: <Nuxt>
 Vue.component(Nuxt.name, Nuxt)
 
+Object.defineProperty(Vue.prototype, '$nuxt', {
+  get() {
+    const globalNuxt = this.$root.$options.$nuxt
+    if (process.client && !globalNuxt && typeof window !== 'undefined') {
+      return window.$nuxt
+    }
+    return globalNuxt
+  },
+  configurable: true
+})
+
 Vue.use(Meta, {"keyName":"head","attribute":"data-n-head","ssrAttribute":"data-n-head-ssr","tagIDKeyName":"hid"})
 
 const defaultTransition = {"name":"page","mode":"out-in","appear":false,"appearClass":"appear","appearActiveClass":"appear-active","appearToClass":"appear-to"}
 
 async function createApp(ssrContext, config = {}) {
-  const router = await createRouter(ssrContext)
+  const router = await createRouter(ssrContext, config)
 
   // Create Root instance
 
@@ -172,6 +184,10 @@ async function createApp(ssrContext, config = {}) {
     await nuxt_plugin_cookieuniversalnuxt_716028ae(app.context, inject)
   }
 
+  if (process.server && typeof nuxt_plugin_httpserver_1d0c2d73 === 'function') {
+    await nuxt_plugin_httpserver_1d0c2d73(app.context, inject)
+  }
+
   if (typeof nuxt_plugin_http_ea31f6ec === 'function') {
     await nuxt_plugin_http_ea31f6ec(app.context, inject)
   }
@@ -191,26 +207,31 @@ async function createApp(ssrContext, config = {}) {
     }
   }
 
-  // If server-side, wait for async component to be resolved first
-  if (process.server && ssrContext && ssrContext.url) {
-    await new Promise((resolve, reject) => {
-      router.push(ssrContext.url, resolve, (err) => {
-        // https://github.com/vuejs/vue-router/blob/v3.4.3/src/util/errors.js
-        if (!err._isRouter) return reject(err)
-        if (err.type !== 2 /* NavigationFailureType.redirected */) return resolve()
+  // Wait for async component to be resolved first
+  await new Promise((resolve, reject) => {
+    const { route } = router.resolve(app.context.route.fullPath)
+    // Ignore 404s rather than blindly replacing URL
+    if (!route.matched.length && process.client) {
+      return resolve()
+    }
+    router.replace(route, resolve, (err) => {
+      // https://github.com/vuejs/vue-router/blob/v3.4.3/src/util/errors.js
+      if (!err._isRouter) return reject(err)
+      if (err.type !== 2 /* NavigationFailureType.redirected */) return resolve()
 
-        // navigated to a different route in router guard
-        const unregister = router.afterEach(async (to, from) => {
+      // navigated to a different route in router guard
+      const unregister = router.afterEach(async (to, from) => {
+        if (process.server && ssrContext && ssrContext.url) {
           ssrContext.url = to.fullPath
-          app.context.route = await getRouteData(to)
-          app.context.params = to.params || {}
-          app.context.query = to.query || {}
-          unregister()
-          resolve()
-        })
+        }
+        app.context.route = await getRouteData(to)
+        app.context.params = to.params || {}
+        app.context.query = to.query || {}
+        unregister()
+        resolve()
       })
     })
-  }
+  })
 
   return {
     app,

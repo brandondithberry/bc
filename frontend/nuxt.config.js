@@ -50,4 +50,11 @@ export default {
     injected: true,
     html: true,
   },
+  build: {
+    extend(config, { isDev, isClient }) {
+      config.node = {
+        fs: "empty",
+      };
+    },
+  },
 };

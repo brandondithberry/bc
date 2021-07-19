@@ -55,6 +55,10 @@ Buttons
   background: #004080 ;
 }
 
+.hidden {
+  visibility: hidden;
+}
+
 /********
 Structure
 *********/

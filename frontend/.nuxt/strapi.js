@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Hookable from 'hookable'
-import { isArray, isObject } from 'lodash'
+import reqURL from 'requrl'
+import { joinURL } from '@nuxt/ufo'
 
 const TOKEN_KEY = 'strapi_jwt'
 
@@ -14,15 +15,25 @@ class Strapi extends Hookable {
 
     this.$cookies = ctx.app.$cookies
     this.$http = ctx.$http.create({})
-    this.$http.setToken(this.getToken(), 'Bearer')
-    this.$http.setBaseURL(runtimeConfig.url || 'http://localhost:1337')
+    this.syncToken()
+    const url = runtimeConfig.url || 'http://localhost:1337'
+    if (process.server && ctx.req && url.startsWith('/')) {
+      this.$http.setBaseURL(joinURL(reqURL(ctx.req), url))
+    } else {
+      this.$http.setBaseURL(url)
+    }
     this.$http.onError((err) => {
+      if (!err.response) {
+        this.callHook('error', err)
+        return
+      }
+
       const { response: { data: { message: msg } } } = err
 
       let message
-      if (isArray(msg)) {
+      if (Array.isArray(msg)) {
         message = msg[0].messages[0].message
-      } else if (isObject(msg)) {
+      } else if (typeof msg === 'object' && msg !== null) {
         message = msg.message
       } else {
         message = msg
@@ -80,12 +91,10 @@ class Strapi extends Hookable {
   }
 
   async fetchUser () {
-    const jwt = this.getToken()
+    const jwt = this.syncToken()
     if (!jwt) {
       return null
     }
-
-    this.$http.setToken(jwt, 'Bearer')
 
     try {
       const user = await this.findOne('users', 'me')
@@ -133,23 +142,48 @@ class Strapi extends Hookable {
     return this.$http.$delete(`/${path}`)
   }
 
-  async graphql (data) {
-    const request = await this.$http.$post(`/graphql`, data)
-    return request.data;
+  async graphql (query) {
+    const { data } = await this.$http.$post(`/graphql`, query)
+    return data
   }
 
   getToken () {
-    return this.$cookies.get(TOKEN_KEY)
+    let token
+    if (process.client && typeof window.localStorage !== 'undefined') {
+      token = window.localStorage.getItem(TOKEN_KEY)
+    }
+    if (!token) {
+      token = this.$cookies.get(TOKEN_KEY)
+    }
+    return token
   }
 
   setToken (jwt) {
     this.$http.setToken(jwt, 'Bearer')
+    if (process.client && typeof window.localStorage !== 'undefined') {
+      window.localStorage.setItem(TOKEN_KEY, jwt)
+    }
     this.$cookies.set(TOKEN_KEY, jwt)
   }
 
   clearToken () {
     this.$http.setToken(false)
+    if (process.client && typeof window.localStorage !== 'undefined') {
+      window.localStorage.removeItem(TOKEN_KEY)
+    }
     this.$cookies.remove(TOKEN_KEY)
+  }
+
+  syncToken (jwt) {
+    if (!jwt) {
+      jwt = this.getToken()
+    }
+    if (jwt) {
+      this.setToken(jwt)
+    } else {
+      this.clearToken()
+    }
+    return jwt
   }
 }
 
@@ -209,7 +243,7 @@ export default async function (ctx, inject) {
 
   const strapi = new Strapi(ctx)
 
-  if (process.server) {
+  if (process.server && !process.static) {
     // Check if jwt to get user
     await strapi.fetchUser()
 
