@@ -1,6 +1,6 @@
 body {
   font-family: 'Arimo', Arial, sans-serif;
-  font-size: 16px;
+  font-size: 17px;
   letter-spacing: 0.03rem;
   line-height: 150%;
   margin: 0;
@@ -8,11 +8,13 @@ body {
 }
 
 h1 {
+  font-family: 'Bitter', Georgia, serif;
   font-size: 3rem;
   line-height: 120%;
 }
 
 h2 {
+  font-family: 'Bitter', Georgia, serif;
   font-size: 2rem;
   line-height: 130%;
 }
@@ -56,7 +58,7 @@ Buttons
 }
 
 .hidden {
-  visibility: hidden;
+  display: none;
 }
 
 /********
@@ -255,6 +257,38 @@ tr:nth-child(even) {
 th, td {
   padding: 10px 20px;
 }
+
+/***********
+Contact Page
+***********/
+
+.contact {
+  text-align: center;
+  padding: 4rem 1rem;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+form input, form textarea {
+  width: 250px;
+  border-radius: 5px;
+  border: 1px solid #aaa;
+  padding: 10px;
+  margin-bottom: 1rem;
+  background-color: #fafafa;
+}
+
+form a.btn {
+  display: block;
+  padding: 10px 10px;
+  width: 250px !important;
+  margin: 0 auto;
+}
+
+.content {
+  text-align: center;
+}
+
 
 /*****
 Footer

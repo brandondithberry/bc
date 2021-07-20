@@ -7,7 +7,7 @@
     </div>
     <!-- Then we show the rest of the component if not. -->
     <div v-else>
-      <div v-if="success">
+      <div v-if="success" class="success">
         Great! Your message has been sent successfully. I will try to respond
         quickly.
       </div>
@@ -73,10 +73,10 @@
             ></textarea>
           </div>
         </div>
-        <div class="">
+        <div>
           <span>
             <button class="btn" type="submit">
-              {{ loading ? "Sending Message..." : "Submit" }}
+              {{ loading ? "Sending Message..." : "Send" }}
             </button>
           </span>
         </div>

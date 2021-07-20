@@ -20,7 +20,9 @@
         }"
       >
         <div class="container">
-          <h1>{{ homepage.hero.title }}</h1>
+          <h1>
+            <b>{{ homepage.hero.title }}</b>
+          </h1>
           <nuxt-link
             v-for="btn in homepage.hero.buttons"
             :key="btn.btnText"

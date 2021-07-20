@@ -15,6 +15,18 @@ export default {
         rel: "stylesheet",
         href: "https://fonts.googleapis.com/css?family=Arimo",
       },
+      {
+        rel: "preconnect",
+        href: "https://fonts.googleapis.com",
+      },
+      {
+        rel: "preconnect",
+        href: "https://fonts.gstatic.com",
+      },
+      {
+        href: "https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,400;0,600;1,400;1,600&display=swap",
+        rel: "stylesheet",
+      },
     ],
   },
   /*

@@ -20,7 +20,7 @@
       "targetField": "title"
     },
     "content": {
-      "type": "text"
+      "type": "richtext"
     }
   }
 }

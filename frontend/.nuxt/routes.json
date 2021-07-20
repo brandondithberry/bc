@@ -1,37 +1,48 @@
 [
   {
+    "name": "articles",
+    "path": "/articles",
+    "component": "C:\\\\Users\\\\brand\\\\Documents\\\\Drive\\\\Benefits Consulting\\\\frontend\\\\pages\\\\articles.vue",
+    "chunkName": "pages/articles",
+    "children": [
+      {
+        "name": "articles-slug",
+        "path": ":slug?",
+        "component": "C:\\\\Users\\\\brand\\\\Documents\\\\Drive\\\\Benefits Consulting\\\\frontend\\\\pages\\\\articles\\\\_slug.vue",
+        "chunkName": "pages/articles/_slug"
+      }
+    ]
+  },
+  {
     "name": "contact",
     "path": "/contact",
     "component": "C:\\\\Users\\\\brand\\\\Documents\\\\Drive\\\\Benefits Consulting\\\\frontend\\\\pages\\\\contact.vue",
-    "chunkName": "pages/contact",
-    "_name": "_1a2311bc"
+    "chunkName": "pages/contact"
   },
   {
-    "name": "articles-slug",
-    "path": "/articles/:slug?",
-    "component": "C:\\\\Users\\\\brand\\\\Documents\\\\Drive\\\\Benefits Consulting\\\\frontend\\\\pages\\\\articles\\\\_slug.vue",
-    "chunkName": "pages/articles/_slug",
-    "_name": "_c5c53ca2"
-  },
-  {
-    "name": "categories-slug",
-    "path": "/categories/:slug?",
-    "component": "C:\\\\Users\\\\brand\\\\Documents\\\\Drive\\\\Benefits Consulting\\\\frontend\\\\pages\\\\categories\\\\_slug.vue",
-    "chunkName": "pages/categories/_slug",
-    "_name": "_bddfac20"
+    "name": "resources",
+    "path": "/resources",
+    "component": "C:\\\\Users\\\\brand\\\\Documents\\\\Drive\\\\Benefits Consulting\\\\frontend\\\\pages\\\\resources.vue",
+    "chunkName": "pages/resources",
+    "children": [
+      {
+        "name": "resources-slug",
+        "path": ":slug?",
+        "component": "C:\\\\Users\\\\brand\\\\Documents\\\\Drive\\\\Benefits Consulting\\\\frontend\\\\pages\\\\resources\\\\_slug.vue",
+        "chunkName": "pages/resources/_slug"
+      }
+    ]
   },
   {
     "name": "index",
     "path": "/",
     "component": "C:\\\\Users\\\\brand\\\\Documents\\\\Drive\\\\Benefits Consulting\\\\frontend\\\\pages\\\\index.vue",
-    "chunkName": "pages/index",
-    "_name": "_cafc3558"
+    "chunkName": "pages/index"
   },
   {
     "name": "slug",
     "path": "/:slug",
     "component": "C:\\\\Users\\\\brand\\\\Documents\\\\Drive\\\\Benefits Consulting\\\\frontend\\\\pages\\\\_slug.vue",
-    "chunkName": "pages/_slug",
-    "_name": "_ce6977e8"
+    "chunkName": "pages/_slug"
   }
 ]

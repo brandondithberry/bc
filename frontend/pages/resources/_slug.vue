@@ -36,7 +36,7 @@
 <script>
 export default {
   async asyncData({ $strapi, params, $md }) {
-    const matchingpages = await $strapi.find("articles", {
+    const matchingpages = await $strapi.find("resources", {
       slug: params.slug,
     });
     return {
