@@ -18,14 +18,14 @@
       <div class="container">
         <div class="grid g-2">
           <div>
-            <h4>
+            <h3>
               If you want to find out if there are VA Benefits you may be
               entitled to, please feel free to contact us for a free
               consultation.
-            </h4>
-            <p><b>Phone:</b> (800) 400-2591</p>
-            <p><b>Email:</b> info@helpwithbenefits.com</p>
-            <p><b>Fax:</b> (888) 201-0091</p>
+            </h3>
+            <h4><b>Phone:</b> (800) 400-2591</h4>
+            <h4><b>Email:</b> info@helpwithbenefits.com</h4>
+            <h4><b>Fax:</b> (888) 201-0091</h4>
           </div>
           <div class="form">
             <ContactForm />
