@@ -33,7 +33,7 @@
     "textColor": {
       "type": "string"
     },
-    "textBgColor": {
+    "bgColor": {
       "type": "string"
     }
   }

@@ -12,11 +12,6 @@
     },
     "url": {
       "type": "string"
-    },
-    "SubMenu": {
-      "type": "component",
-      "repeatable": true,
-      "component": "elements.sub-menu"
     }
   }
 }

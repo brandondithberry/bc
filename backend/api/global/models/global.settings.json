@@ -47,6 +47,23 @@
       "type": "component",
       "repeatable": true,
       "component": "elements.menu"
+    },
+    "altLogo": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false,
+      "pluginOptions": {}
+    },
+    "cta": {
+      "type": "component",
+      "repeatable": false,
+      "component": "elements.box"
     }
   }
 }

@@ -61,7 +61,7 @@
           </div>
         </div>
         <div>
-          <label for="message">Message</label>
+          <label for="message">Message*</label>
           <div>
             <textarea
               id="message"

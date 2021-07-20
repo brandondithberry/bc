@@ -4,7 +4,7 @@
       <div class="container">
         <div class="nav-logo">
           <nuxt-link to="/" tag="a"
-            ><img :src="`//localhost:1337${global.logo.url}`" width="200"
+            ><img :src="`//localhost:1337${global.logo.url}`" width="220"
           /></nuxt-link>
         </div>
         <nav>
@@ -20,7 +20,7 @@
     <footer>
       <div class="container">
         <nuxt-link to="/" tag="a"
-          ><img :src="`//localhost:1337${global.logo.url}`" width="140"
+          ><img :src="`//localhost:1337${global.altLogo.url}`" width="220"
         /></nuxt-link>
         <nav>
           <ul>

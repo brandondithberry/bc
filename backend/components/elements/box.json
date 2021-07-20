@@ -1,7 +1,7 @@
 {
   "collectionName": "components_elements_boxes",
   "info": {
-    "name": "box",
+    "name": "banner",
     "icon": "stop",
     "description": ""
   },
@@ -9,9 +9,6 @@
   "attributes": {
     "title": {
       "type": "string"
-    },
-    "paragraph": {
-      "type": "text"
     },
     "image": {
       "model": "file",
@@ -27,12 +24,6 @@
       "type": "component",
       "repeatable": true,
       "component": "elements.single-button"
-    },
-    "ovTopColor": {
-      "type": "string"
-    },
-    "ovBottomColor": {
-      "type": "string"
     }
   }
 }

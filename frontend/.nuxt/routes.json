@@ -1,19 +1,5 @@
 [
   {
-    "name": "articles",
-    "path": "/articles",
-    "component": "C:\\\\Users\\\\brand\\\\Documents\\\\Drive\\\\Benefits Consulting\\\\frontend\\\\pages\\\\articles.vue",
-    "chunkName": "pages/articles",
-    "children": [
-      {
-        "name": "articles-slug",
-        "path": ":slug?",
-        "component": "C:\\\\Users\\\\brand\\\\Documents\\\\Drive\\\\Benefits Consulting\\\\frontend\\\\pages\\\\articles\\\\_slug.vue",
-        "chunkName": "pages/articles/_slug"
-      }
-    ]
-  },
-  {
     "name": "contact",
     "path": "/contact",
     "component": "C:\\\\Users\\\\brand\\\\Documents\\\\Drive\\\\Benefits Consulting\\\\frontend\\\\pages\\\\contact.vue",
@@ -32,6 +18,12 @@
         "chunkName": "pages/resources/_slug"
       }
     ]
+  },
+  {
+    "name": "articles-slug",
+    "path": "/articles/:slug?",
+    "component": "C:\\\\Users\\\\brand\\\\Documents\\\\Drive\\\\Benefits Consulting\\\\frontend\\\\pages\\\\articles\\\\_slug.vue",
+    "chunkName": "pages/articles/_slug"
   },
   {
     "name": "index",

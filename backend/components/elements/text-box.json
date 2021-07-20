@@ -13,9 +13,6 @@
     "body": {
       "type": "text"
     },
-    "bgColor": {
-      "type": "string"
-    },
     "image": {
       "model": "file",
       "via": "related",
@@ -25,13 +22,6 @@
       "plugin": "upload",
       "required": false,
       "pluginOptions": {}
-    },
-    "position": {
-      "type": "enumeration",
-      "enum": [
-        "left",
-        "right"
-      ]
     }
   }
 }

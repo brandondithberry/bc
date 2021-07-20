@@ -30,6 +30,38 @@
         <nuxt-content v-html="content"></nuxt-content>
       </div>
     </section>
+    <section
+      :style="{
+        background: 'url(//localhost:1337' + global.cta.image.url + ')',
+        backgroundSize: '',
+        backgroundPosition: '',
+      }"
+      class="cta"
+    >
+      <div
+        class="overlay"
+        :style="{
+          background:
+            'linear-gradient(' +
+            global.cta.ovTopColor +
+            ', ' +
+            global.cta.ovBottomColor +
+            ')',
+        }"
+      >
+        <div class="container">
+          <h3>{{ global.cta.title }}</h3>
+          <nuxt-link
+            v-for="btn in global.cta.buttons"
+            :key="btn.btnText"
+            :to="btn.btnLink"
+            class="btn"
+            tag="a"
+            >{{ btn.btnText }}
+          </nuxt-link>
+        </div>
+      </div>
+    </section>
   </div>
 </template>
 

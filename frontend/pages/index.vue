@@ -8,17 +8,7 @@
       }"
       class="banner"
     >
-      <div
-        class="overlay"
-        :style="{
-          background:
-            'linear-gradient(' +
-            homepage.hero.ovTopColor +
-            ', ' +
-            homepage.hero.ovBottomColor +
-            ')',
-        }"
-      >
+      <div class="overlay">
         <div class="container">
           <h1>
             <b>{{ homepage.hero.title }}</b>
@@ -40,7 +30,7 @@
         background: '' + homepage.textBox.bgColor + '',
       }"
     >
-      <div v-if="homepage.textBox.position === 'left'" class="left">
+      <div v-if="homepage.textBox.position === 'left'" class="grid g-2">
         <div class="text">
           <h2>{{ homepage.textBox.heading }}</h2>
           <h4>{{ homepage.textBox.body }}</h4>
@@ -55,7 +45,7 @@
           class="image"
         ></div>
       </div>
-      <div v-else class="right">
+      <div v-else class="grid g-2">
         <div
           :style="{
             background:
@@ -71,18 +61,18 @@
         </div>
       </div>
     </section>
-    <section class="grid">
+    <section class="grid g-3">
       <div
         v-for="gr in homepage.grid"
         :key="gr.id"
         class="grid-item"
         :style="{
           color: '' + gr.textColor + '',
-          background: '' + gr.textBgColor + '',
+          background: '' + gr.bgColor + '',
         }"
       >
         <div class="grid-text">
-          <img :src="`//localhost:1337${gr.icon.url}`" width="30%" />
+          <img :src="`//localhost:1337${gr.icon.url}`" width="25%" />
           <h2>{{ gr.title }}</h2>
           <h4>{{ gr.paragraph }}</h4>
         </div>
@@ -90,27 +80,17 @@
     </section>
     <section
       :style="{
-        background: 'url(//localhost:1337' + homepage.cta.image.url + ')',
+        background: 'url(//localhost:1337' + global.cta.image.url + ')',
         backgroundSize: '',
         backgroundPosition: '',
       }"
       class="cta"
     >
-      <div
-        class="overlay"
-        :style="{
-          background:
-            'linear-gradient(' +
-            homepage.cta.ovTopColor +
-            ', ' +
-            homepage.cta.ovBottomColor +
-            ')',
-        }"
-      >
+      <div class="overlay">
         <div class="container">
-          <h2>{{ homepage.cta.title }}</h2>
+          <h3>{{ global.cta.title }}</h3>
           <nuxt-link
-            v-for="btn in homepage.cta.buttons"
+            v-for="btn in global.cta.buttons"
             :key="btn.btnText"
             :to="btn.btnLink"
             class="btn"

@@ -13,6 +13,12 @@
     "plugin:prettier/recommended",
     "prettier/vue"
   ],
+  "prettier/prettier": [
+    "error",
+    {
+      "endOfLine": "auto"
+    }
+  ],
   "plugins": ["vue"],
   "rules": {}
 }
