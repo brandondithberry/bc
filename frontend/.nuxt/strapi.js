@@ -16,7 +16,7 @@ class Strapi extends Hookable {
     this.$cookies = ctx.app.$cookies
     this.$http = ctx.$http.create({})
     this.syncToken()
-    const url = runtimeConfig.url || 'http://localhost:1337'
+    const url = runtimeConfig.url || 'https://admin.vetsbenefitsconsulting.com'
     if (process.server && ctx.req && url.startsWith('/')) {
       this.$http.setBaseURL(joinURL(reqURL(ctx.req), url))
     } else {

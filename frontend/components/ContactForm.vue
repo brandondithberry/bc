@@ -8,8 +8,7 @@
     <!-- Then we show the rest of the component if not. -->
     <div v-else>
       <div v-if="success" class="success">
-        Great! Your message has been sent successfully. I will try to respond
-        quickly.
+        Your message has been sent successfully.
       </div>
       <form v-else @submit.prevent="sendMessage">
         <div v-if="errored">
@@ -111,7 +110,7 @@ export default {
       // Otherwise the form will try to go through.
       else {
         this.$http
-          .post("http://localhost:1337/messages", {
+          .post("https://admin.vetsbenefitsconsulting.com/messages", {
             name: this.name,
             email: this.email,
             phone: this.phone,

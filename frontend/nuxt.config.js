@@ -1,7 +1,13 @@
-const strapiBaseUri = process.env.API_URL || "http://localhost:1337";
+const strapiBaseUri = process.env.API_URL || "https://admin.vetsbenefitsconsulting.com";
 
 export default {
-  target: "static",
+  server: {
+    port: 3000, // default: 3000
+    host: '0.0.0.0', // default: localhost,
+    timing: false
+  },
+  poweredByHeader: false,
+  target: "server",
   env: {
     strapiBaseUri,
   },

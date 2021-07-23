@@ -2,45 +2,45 @@
   {
     "name": "contact",
     "path": "/contact",
-    "component": "C:\\\\Users\\\\brand\\\\Documents\\\\Drive\\\\Benefits Consulting\\\\frontend\\\\pages\\\\contact.vue",
+    "component": "/var/www/bc/frontend/pages/contact.vue",
     "chunkName": "pages/contact",
-    "_name": "_1a2311bc"
+    "_name": "_5d9813f6"
   },
   {
     "name": "resources",
     "path": "/resources",
-    "component": "C:\\\\Users\\\\brand\\\\Documents\\\\Drive\\\\Benefits Consulting\\\\frontend\\\\pages\\\\resources.vue",
+    "component": "/var/www/bc/frontend/pages/resources.vue",
     "chunkName": "pages/resources",
     "children": [
       {
         "name": "resources-slug",
         "path": ":slug?",
-        "component": "C:\\\\Users\\\\brand\\\\Documents\\\\Drive\\\\Benefits Consulting\\\\frontend\\\\pages\\\\resources\\\\_slug.vue",
+        "component": "/var/www/bc/frontend/pages/resources/_slug.vue",
         "chunkName": "pages/resources/_slug",
-        "_name": "_d970159a"
+        "_name": "_123a27f6"
       }
     ],
-    "_name": "_46c31427"
+    "_name": "_acb7336c"
   },
   {
     "name": "articles-slug",
     "path": "/articles/:slug?",
-    "component": "C:\\\\Users\\\\brand\\\\Documents\\\\Drive\\\\Benefits Consulting\\\\frontend\\\\pages\\\\articles\\\\_slug.vue",
+    "component": "/var/www/bc/frontend/pages/articles/_slug.vue",
     "chunkName": "pages/articles/_slug",
-    "_name": "_c5c53ca2"
+    "_name": "_60f59fe3"
   },
   {
     "name": "index",
     "path": "/",
-    "component": "C:\\\\Users\\\\brand\\\\Documents\\\\Drive\\\\Benefits Consulting\\\\frontend\\\\pages\\\\index.vue",
+    "component": "/var/www/bc/frontend/pages/index.vue",
     "chunkName": "pages/index",
-    "_name": "_cafc3558"
+    "_name": "_56607e12"
   },
   {
     "name": "slug",
     "path": "/:slug",
-    "component": "C:\\\\Users\\\\brand\\\\Documents\\\\Drive\\\\Benefits Consulting\\\\frontend\\\\pages\\\\_slug.vue",
+    "component": "/var/www/bc/frontend/pages/_slug.vue",
     "chunkName": "pages/_slug",
-    "_name": "_ce6977e8"
+    "_name": "_59cdc0a2"
   }
 ]

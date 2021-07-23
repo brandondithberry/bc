@@ -25,11 +25,6 @@
       "required": false,
       "pluginOptions": {}
     },
-    "buttons": {
-      "type": "component",
-      "repeatable": true,
-      "component": "elements.single-button"
-    },
     "textColor": {
       "type": "string"
     },

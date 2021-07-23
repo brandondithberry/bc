@@ -3,7 +3,7 @@
   <div>
     <section
       :style="{
-        background: 'url(//localhost:1337' + page.hero.image.url + ')',
+        background: 'url(//admin.vetsbenefitsconsulting.com' + page.hero.image.url + ')',
         backgroundSize: '',
         backgroundPosition: '',
       }"

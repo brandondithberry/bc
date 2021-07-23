@@ -3,9 +3,10 @@
   <div>
     <section
       :style="{
-        background: 'url(//localhost:1337' + page.hero.image.url + ')',
-        backgroundSize: '',
-        backgroundPosition: '',
+        background:
+          'url(//admin.vetsbenefitsconsulting.com' + page.hero.image.url + ')',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
       }"
       class="hero"
     >
@@ -32,7 +33,8 @@
     </section>
     <section
       :style="{
-        background: 'url(//localhost:1337' + global.cta.image.url + ')',
+        background:
+          'url(//admin.vetsbenefitsconsulting.com' + global.cta.image.url + ')',
         backgroundSize: '',
         backgroundPosition: '',
       }"
@@ -66,6 +68,9 @@
 </template>
 
 <script>
+import { getMetaTags } from "../utils/seo";
+import { getStrapiMedia } from "../utils/medias";
+
 export default {
   async asyncData({ $strapi, params, $md }) {
     const matchingpages = await $strapi.find("pages", {
@@ -81,6 +86,28 @@ export default {
     return {
       apiUrl: process.env.strapiBaseUri,
       content: "",
+    };
+  },
+  head() {
+    const { seo } = this.page;
+    const { defaultSeo, favicon, siteName } = this.global;
+
+    // Merge default and article-specific SEO data
+    const fullSeo = {
+      ...defaultSeo,
+      ...seo,
+    };
+
+    return {
+      titleTemplate: `%s | ${siteName}`,
+      title: fullSeo.metaTitle,
+      meta: getMetaTags(fullSeo),
+      link: [
+        {
+          rel: "favicon",
+          href: getStrapiMedia(favicon.url),
+        },
+      ],
     };
   },
 };

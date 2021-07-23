@@ -2,9 +2,9 @@
   <div>
     <section
       :style="{
-        background: 'url(//localhost:1337' + homepage.hero.image.url + ')',
-        backgroundSize: '',
-        backgroundPosition: '',
+        background: 'url(//admin.vetsbenefitsconsulting.com' + homepage.hero.image.url + ')',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
       }"
       class="banner"
     >
@@ -30,7 +30,7 @@
         background: '' + homepage.textBox.bgColor + '',
       }"
     >
-      <div v-if="homepage.textBox.position === 'left'" class="grid g-2">
+      <div class="grid g-2">
         <div class="text">
           <h2>{{ homepage.textBox.heading }}</h2>
           <h4>{{ homepage.textBox.body }}</h4>
@@ -38,27 +38,12 @@
         <div
           :style="{
             background:
-              'url(//localhost:1337' + homepage.textBox.image.url + ')',
-            backgroundSize: '',
-            backgroundPosition: '',
+              'url(//admin.vetsbenefitsconsulting.com' + homepage.textBox.image.url + ')',
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
           }"
           class="image"
         ></div>
-      </div>
-      <div v-else class="grid g-2">
-        <div
-          :style="{
-            background:
-              'url(//localhost:1337' + homepage.textBox.image.url + ')',
-            backgroundSize: '',
-            backgroundPosition: '',
-          }"
-          class="image"
-        ></div>
-        <div class="text">
-          <h2>{{ homepage.textBox.heading }}</h2>
-          <h4>{{ homepage.textBox.body }}</h4>
-        </div>
       </div>
     </section>
     <section class="grid g-3">
@@ -72,7 +57,7 @@
         }"
       >
         <div class="grid-text">
-          <img :src="`//localhost:1337${gr.icon.url}`" width="25%" />
+          <img :src="`//admin.vetsbenefitsconsulting.com${gr.icon.url}`" width="25%" />
           <h2>{{ gr.title }}</h2>
           <h4>{{ gr.paragraph }}</h4>
         </div>
@@ -80,9 +65,9 @@
     </section>
     <section
       :style="{
-        background: 'url(//localhost:1337' + global.cta.image.url + ')',
-        backgroundSize: '',
-        backgroundPosition: '',
+        background: 'url(//admin.vetsbenefitsconsulting.com' + global.cta.image.url + ')',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
       }"
       class="cta"
     >

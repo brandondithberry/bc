@@ -2,9 +2,9 @@
   <div>
     <section
       :style="{
-        background: 'url(//localhost:1337' + contact.bgImage.url + ')',
-        backgroundSize: '',
-        backgroundPosition: '',
+        background: 'url(//admin.vetsbenefitsconsulting.com' + contact.bgImage.url + ')',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
       }"
       class="hero"
     >

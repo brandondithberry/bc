@@ -4,12 +4,12 @@ import { normalizeURL, decode } from 'ufo'
 import { interopDefault } from './utils'
 import scrollBehavior from './router.scrollBehavior.js'
 
-const _1a2311bc = () => interopDefault(import('..\\pages\\contact.vue' /* webpackChunkName: "pages/contact" */))
-const _46c31427 = () => interopDefault(import('..\\pages\\resources.vue' /* webpackChunkName: "pages/resources" */))
-const _d970159a = () => interopDefault(import('..\\pages\\resources\\_slug.vue' /* webpackChunkName: "pages/resources/_slug" */))
-const _c5c53ca2 = () => interopDefault(import('..\\pages\\articles\\_slug.vue' /* webpackChunkName: "pages/articles/_slug" */))
-const _cafc3558 = () => interopDefault(import('..\\pages\\index.vue' /* webpackChunkName: "pages/index" */))
-const _ce6977e8 = () => interopDefault(import('..\\pages\\_slug.vue' /* webpackChunkName: "pages/_slug" */))
+const _5d9813f6 = () => interopDefault(import('../pages/contact.vue' /* webpackChunkName: "pages/contact" */))
+const _acb7336c = () => interopDefault(import('../pages/resources.vue' /* webpackChunkName: "pages/resources" */))
+const _123a27f6 = () => interopDefault(import('../pages/resources/_slug.vue' /* webpackChunkName: "pages/resources/_slug" */))
+const _60f59fe3 = () => interopDefault(import('../pages/articles/_slug.vue' /* webpackChunkName: "pages/articles/_slug" */))
+const _56607e12 = () => interopDefault(import('../pages/index.vue' /* webpackChunkName: "pages/index" */))
+const _59cdc0a2 = () => interopDefault(import('../pages/_slug.vue' /* webpackChunkName: "pages/_slug" */))
 
 const emptyFn = () => {}
 
@@ -24,28 +24,28 @@ export const routerOptions = {
 
   routes: [{
     path: "/contact",
-    component: _1a2311bc,
+    component: _5d9813f6,
     name: "contact"
   }, {
     path: "/resources",
-    component: _46c31427,
+    component: _acb7336c,
     name: "resources",
     children: [{
       path: ":slug?",
-      component: _d970159a,
+      component: _123a27f6,
       name: "resources-slug"
     }]
   }, {
     path: "/articles/:slug?",
-    component: _c5c53ca2,
+    component: _60f59fe3,
     name: "articles-slug"
   }, {
     path: "/",
-    component: _cafc3558,
+    component: _56607e12,
     name: "index"
   }, {
     path: "/:slug",
-    component: _ce6977e8,
+    component: _59cdc0a2,
     name: "slug"
   }],
 

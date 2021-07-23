@@ -12,11 +12,11 @@ import { setContext, getLocation, getRouteData, normalizeError } from './utils'
 
 /* Plugins */
 
-import nuxt_plugin_cookieuniversalnuxt_716028ae from 'nuxt_plugin_cookieuniversalnuxt_716028ae' // Source: .\\cookie-universal-nuxt.js (mode: 'all')
-import nuxt_plugin_httpserver_1d0c2d73 from 'nuxt_plugin_httpserver_1d0c2d73' // Source: .\\http.server.js (mode: 'server')
-import nuxt_plugin_http_ea31f6ec from 'nuxt_plugin_http_ea31f6ec' // Source: .\\http.js (mode: 'all')
-import nuxt_plugin_strapi_4c644c69 from 'nuxt_plugin_strapi_4c644c69' // Source: .\\strapi.js (mode: 'all')
-import nuxt_plugin_markdownit_ae10cd90 from 'nuxt_plugin_markdownit_ae10cd90' // Source: .\\markdownit.js (mode: 'all')
+import nuxt_plugin_cookieuniversalnuxt_96420d22 from 'nuxt_plugin_cookieuniversalnuxt_96420d22' // Source: ./cookie-universal-nuxt.js (mode: 'all')
+import nuxt_plugin_httpserver_0213cb74 from 'nuxt_plugin_httpserver_0213cb74' // Source: ./http.server.js (mode: 'server')
+import nuxt_plugin_http_d66a94ae from 'nuxt_plugin_http_d66a94ae' // Source: ./http.js (mode: 'all')
+import nuxt_plugin_strapi_6c2031c8 from 'nuxt_plugin_strapi_6c2031c8' // Source: ./strapi.js (mode: 'all')
+import nuxt_plugin_markdownit_1373b717 from 'nuxt_plugin_markdownit_1373b717' // Source: ./markdownit.js (mode: 'all')
 
 // Component: <ClientOnly>
 Vue.component(ClientOnly.name, ClientOnly)
@@ -180,24 +180,24 @@ async function createApp(ssrContext, config = {}) {
   }
   // Plugin execution
 
-  if (typeof nuxt_plugin_cookieuniversalnuxt_716028ae === 'function') {
-    await nuxt_plugin_cookieuniversalnuxt_716028ae(app.context, inject)
+  if (typeof nuxt_plugin_cookieuniversalnuxt_96420d22 === 'function') {
+    await nuxt_plugin_cookieuniversalnuxt_96420d22(app.context, inject)
   }
 
-  if (process.server && typeof nuxt_plugin_httpserver_1d0c2d73 === 'function') {
-    await nuxt_plugin_httpserver_1d0c2d73(app.context, inject)
+  if (process.server && typeof nuxt_plugin_httpserver_0213cb74 === 'function') {
+    await nuxt_plugin_httpserver_0213cb74(app.context, inject)
   }
 
-  if (typeof nuxt_plugin_http_ea31f6ec === 'function') {
-    await nuxt_plugin_http_ea31f6ec(app.context, inject)
+  if (typeof nuxt_plugin_http_d66a94ae === 'function') {
+    await nuxt_plugin_http_d66a94ae(app.context, inject)
   }
 
-  if (typeof nuxt_plugin_strapi_4c644c69 === 'function') {
-    await nuxt_plugin_strapi_4c644c69(app.context, inject)
+  if (typeof nuxt_plugin_strapi_6c2031c8 === 'function') {
+    await nuxt_plugin_strapi_6c2031c8(app.context, inject)
   }
 
-  if (typeof nuxt_plugin_markdownit_ae10cd90 === 'function') {
-    await nuxt_plugin_markdownit_ae10cd90(app.context, inject)
+  if (typeof nuxt_plugin_markdownit_1373b717 === 'function') {
+    await nuxt_plugin_markdownit_1373b717(app.context, inject)
   }
 
   // Lock enablePreview in context
