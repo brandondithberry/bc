@@ -1,5 +1,12 @@
 [
   {
+    "name": "articles",
+    "path": "/articles",
+    "component": "/var/www/bc/frontend/pages/articles/index.vue",
+    "chunkName": "pages/articles/index",
+    "_name": "_62ac412b"
+  },
+  {
     "name": "contact",
     "path": "/contact",
     "component": "/var/www/bc/frontend/pages/contact.vue",
@@ -9,25 +16,23 @@
   {
     "name": "resources",
     "path": "/resources",
-    "component": "/var/www/bc/frontend/pages/resources.vue",
-    "chunkName": "pages/resources",
-    "children": [
-      {
-        "name": "resources-slug",
-        "path": ":slug?",
-        "component": "/var/www/bc/frontend/pages/resources/_slug.vue",
-        "chunkName": "pages/resources/_slug",
-        "_name": "_123a27f6"
-      }
-    ],
-    "_name": "_acb7336c"
+    "component": "/var/www/bc/frontend/pages/resources/index.vue",
+    "chunkName": "pages/resources/index",
+    "_name": "_0ecce566"
   },
   {
     "name": "articles-slug",
-    "path": "/articles/:slug?",
+    "path": "/articles/:slug",
     "component": "/var/www/bc/frontend/pages/articles/_slug.vue",
     "chunkName": "pages/articles/_slug",
     "_name": "_60f59fe3"
+  },
+  {
+    "name": "resources-slug",
+    "path": "/resources/:slug",
+    "component": "/var/www/bc/frontend/pages/resources/_slug.vue",
+    "chunkName": "pages/resources/_slug",
+    "_name": "_123a27f6"
   },
   {
     "name": "index",

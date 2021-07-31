@@ -1,24 +1,21 @@
-/* eslint-disable vue/no-v-html */
 <template>
   <div>
     <section
       :style="{
-        background: 'url(//admin.vetsbenefitsconsulting.com' + page.hero.image.url + ')',
-        backgroundSize: '',
-        backgroundPosition: '',
+        background:
+          'url(//admin.vetsbenefitsconsulting.com' + page.image.url + ')',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
       }"
       class="hero"
     >
       <div
         class="overlay"
-        :style="{
-          background:
-            'linear-gradient(' +
-            page.hero.ovTopColor +
-            ', ' +
-            page.hero.ovBottomColor +
-            ')',
-        }"
+        style="
+           {
+            background: #000000bb;
+          }
+        "
       >
         <div class="container">
           <h1>{{ page.title }}</h1>
@@ -27,13 +24,51 @@
     </section>
     <section class="body">
       <div class="container">
-        <nuxt-content v-html="content"></nuxt-content>
+        <div class="content">
+          <div v-html="content"></div>
+        </div>
+      </div>
+    </section>
+    <section
+      :style="{
+        background:
+          'url(//admin.vetsbenefitsconsulting.com' + global.cta.image.url + ')',
+        backgroundSize: '',
+        backgroundPosition: '',
+      }"
+      class="cta"
+    >
+      <div
+        class="overlay"
+        :style="{
+          background:
+            'linear-gradient(' +
+            global.cta.ovTopColor +
+            ', ' +
+            global.cta.ovBottomColor +
+            ')',
+        }"
+      >
+        <div class="container">
+          <h3>{{ global.cta.title }}</h3>
+          <nuxt-link
+            v-for="btn in global.cta.buttons"
+            :key="btn.btnText"
+            :to="btn.btnLink"
+            class="btn"
+            tag="a"
+            >{{ btn.btnText }}
+          </nuxt-link>
+        </div>
       </div>
     </section>
   </div>
 </template>
 
 <script>
+import { getMetaTags } from "~/utils/seo";
+import { getStrapiMedia } from "~/utils/medias";
+
 export default {
   async asyncData({ $strapi, params, $md }) {
     const matchingpages = await $strapi.find("articles", {
@@ -49,6 +84,28 @@ export default {
     return {
       apiUrl: process.env.strapiBaseUri,
       content: "",
+    };
+  },
+  head() {
+    const { seo } = this.page;
+    const { defaultSeo, favicon, siteName } = this.global;
+
+    // Merge default and article-specific SEO data
+    const fullSeo = {
+      ...defaultSeo,
+      ...seo,
+    };
+
+    return {
+      titleTemplate: `%s | ${siteName}`,
+      title: "fullSeo.metaTitle",
+      meta: getMetaTags(fullSeo),
+      link: [
+        {
+          rel: "favicon",
+          href: getStrapiMedia(favicon.url),
+        },
+      ],
     };
   },
 };

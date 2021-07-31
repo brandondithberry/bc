@@ -28,7 +28,7 @@
     </section>
     <section class="body">
       <div class="container">
-        <nuxt-content v-html="content"></nuxt-content>
+        <div v-html="content"></div>
       </div>
     </section>
     <section

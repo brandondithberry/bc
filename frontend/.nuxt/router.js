@@ -4,10 +4,11 @@ import { normalizeURL, decode } from 'ufo'
 import { interopDefault } from './utils'
 import scrollBehavior from './router.scrollBehavior.js'
 
+const _62ac412b = () => interopDefault(import('../pages/articles/index.vue' /* webpackChunkName: "pages/articles/index" */))
 const _5d9813f6 = () => interopDefault(import('../pages/contact.vue' /* webpackChunkName: "pages/contact" */))
-const _acb7336c = () => interopDefault(import('../pages/resources.vue' /* webpackChunkName: "pages/resources" */))
-const _123a27f6 = () => interopDefault(import('../pages/resources/_slug.vue' /* webpackChunkName: "pages/resources/_slug" */))
+const _0ecce566 = () => interopDefault(import('../pages/resources/index.vue' /* webpackChunkName: "pages/resources/index" */))
 const _60f59fe3 = () => interopDefault(import('../pages/articles/_slug.vue' /* webpackChunkName: "pages/articles/_slug" */))
+const _123a27f6 = () => interopDefault(import('../pages/resources/_slug.vue' /* webpackChunkName: "pages/resources/_slug" */))
 const _56607e12 = () => interopDefault(import('../pages/index.vue' /* webpackChunkName: "pages/index" */))
 const _59cdc0a2 = () => interopDefault(import('../pages/_slug.vue' /* webpackChunkName: "pages/_slug" */))
 
@@ -23,22 +24,25 @@ export const routerOptions = {
   scrollBehavior,
 
   routes: [{
+    path: "/articles",
+    component: _62ac412b,
+    name: "articles"
+  }, {
     path: "/contact",
     component: _5d9813f6,
     name: "contact"
   }, {
     path: "/resources",
-    component: _acb7336c,
-    name: "resources",
-    children: [{
-      path: ":slug?",
-      component: _123a27f6,
-      name: "resources-slug"
-    }]
+    component: _0ecce566,
+    name: "resources"
   }, {
-    path: "/articles/:slug?",
+    path: "/articles/:slug",
     component: _60f59fe3,
     name: "articles-slug"
+  }, {
+    path: "/resources/:slug",
+    component: _123a27f6,
+    name: "resources-slug"
   }, {
     path: "/",
     component: _56607e12,

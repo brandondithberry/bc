@@ -2,7 +2,8 @@
   <div>
     <section
       :style="{
-        background: 'url(//admin.vetsbenefitsconsulting.com' + contact.bgImage.url + ')',
+        background:
+          'url(//admin.vetsbenefitsconsulting.com' + contact.bgImage.url + ')',
         backgroundSize: 'cover',
         backgroundPosition: 'center',
       }"
@@ -18,18 +19,11 @@
       <div class="container">
         <div class="grid g-2">
           <div>
-            <h3>
-              If you want to find out if there are VA Benefits you may be
-              entitled to, please feel free to contact us for a free
-              consultation.
-            </h3>
-            <h4><b>Phone:</b> (800) 400-2591</h4>
-            <h4><b>Email:</b> info@helpwithbenefits.com</h4>
-            <h4><b>Fax:</b> (888) 201-0091</h4>
+            <div v-html="content"></div>
           </div>
-          <div class="form">
+          <!-- <div class="form">
             <ContactForm />
-          </div>
+          </div>-->
         </div>
       </div>
     </section>
@@ -45,10 +39,17 @@ export default {
   components: {
     ContactForm,
   },
-  async asyncData({ $strapi }) {
+  async asyncData({ $strapi, $md }) {
+    const data = await $strapi.find("contact");
     return {
       contact: await $strapi.find("contact"),
       global: await $strapi.find("global"),
+      content: $md.render(data.content),
+    };
+  },
+  data() {
+    return {
+      content: "",
     };
   },
   head() {

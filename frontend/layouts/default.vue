@@ -4,13 +4,29 @@
       <div class="container">
         <div class="nav-logo">
           <nuxt-link to="/" tag="a"
-            ><img :src="`//admin.vetsbenefitsconsulting.com${global.logo.url}`" width="200"
+            ><img
+              :src="`//admin.vetsbenefitsconsulting.com${global.logo.url}`"
+              width="200"
           /></nuxt-link>
         </div>
-        <nav>
+        <label for="show" class="open-menu">MENU</label
+        ><input type="radio" id="show" name="group" />
+        <nav class="desktop">
           <ul>
             <li v-for="link in global.HeaderMenu" :key="link.text">
               <nuxt-link :to="link.url" tag="a">{{ link.text }}</nuxt-link>
+            </li>
+          </ul>
+        </nav>
+        <nav class="mobile">
+          <ul>
+            <li v-for="link in global.HeaderMenu" :key="link.text">
+              <nuxt-link :to="link.url" tag="a">{{ link.text }}</nuxt-link>
+            </li>
+            <li>
+              <label for="hide" class="close-menu"
+                ><span>CLOSE MENU</span></label
+              ><input type="radio" id="hide" name="group" />
             </li>
           </ul>
         </nav>
@@ -20,7 +36,9 @@
     <footer>
       <div class="container">
         <nuxt-link to="/" tag="a"
-          ><img :src="`//admin.vetsbenefitsconsulting.com${global.altLogo.url}`" width="220"
+          ><img
+            :src="`//admin.vetsbenefitsconsulting.com${global.altLogo.url}`"
+            width="220"
         /></nuxt-link>
         <nav>
           <ul>
@@ -53,7 +71,21 @@ export default {
   data: function () {
     return {
       global: [],
+      showMobileMenu: false,
     };
+  },
+  watch: {
+    $route() {
+      this.showMobileMenu = false;
+    },
+  },
+  methods: {
+    showMenu() {
+      this.$emit("showMobileMenu");
+    },
+    closeMenu() {
+      this.$emit("closeMobileMenu");
+    },
   },
 };
 </script>
