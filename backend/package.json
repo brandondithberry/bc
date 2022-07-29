@@ -9,10 +9,10 @@
     "build": "strapi build",
     "strapi": "strapi"
   },
-  "devDependencies": {},
   "dependencies": {
     "knex": "0.21.18",
     "mime-types": "^2.1.27",
+    "pm2": "^5.2.0",
     "sendmail": "^1.6.1",
     "sqlite3": "5.0.0",
     "strapi": "3.6.5",
@@ -25,6 +25,7 @@
     "strapi-plugin-i18n": "3.6.5",
     "strapi-plugin-upload": "3.6.5",
     "strapi-plugin-users-permissions": "3.6.5",
+    "strapi-provider-email-nodemailer": "^3.6.5",
     "strapi-provider-email-sendgrid": "^3.6.5",
     "strapi-utils": "3.6.5"
   },

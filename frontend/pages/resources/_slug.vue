@@ -35,7 +35,7 @@
           <h4><b>{{ down.filename }}</b></h4>
           <a
             class="btn"
-            :href="`//admin.vetsbenefitsconsulting.com${down.download.url}`"
+            :href="`${down.download}`"
             target="_blank"
           >
             View Resource

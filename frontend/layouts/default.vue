@@ -47,13 +47,13 @@
             </li>
           </ul>
         </nav>
-        <nav>
+        <nav class="terms">
           <ul>
             <li>
-              <a href="#">Privacy Policy</a>
+              <nuxt-link to="/privacy-policy" tag="a">Privacy Policy</nuxt-link>
             </li>
             <li>
-              <a href="#">Terms of Use</a>
+              <nuxt-link to="/terms-of-use" tag="a">Terms of Use</nuxt-link>
             </li>
           </ul>
         </nav>

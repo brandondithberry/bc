@@ -21,9 +21,6 @@
           <div>
             <div v-html="content"></div>
           </div>
-          <!-- <div class="form">
-            <ContactForm />
-          </div>-->
         </div>
       </div>
     </section>

@@ -1,13 +1,13 @@
-const strapiBaseUri = process.env.API_URL || "https://admin.vetsbenefitsconsulting.com";
+const strapiBaseUri = process.env.API_URL || "https://admin.vetsbenefitsconsulting.com"
 
 export default {
   server: {
-    port: 3000, // default: 3000
-    host: '0.0.0.0', // default: localhost,
-    timing: false
+    port: 3000,
+    host: '0.0.0.0',
+    timing: false,
   },
   poweredByHeader: false,
-  target: "static",
+  target: "server",
   env: {
     strapiBaseUri,
   },
@@ -31,7 +31,10 @@ export default {
    ** Global CSS
    */
   css: ["@assets/css/main.css"],
-  modules: ["@nuxtjs/markdownit", "@nuxtjs/strapi"],
+  modules: [
+    "@nuxtjs/markdownit",
+    "@nuxtjs/strapi",
+  ],
   strapi: {
     url: strapiBaseUri,
     entities: [

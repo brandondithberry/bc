@@ -585,4 +585,8 @@ footer h6 {
   footer .container {
     padding: 20px !important;
   }
+
+  footer nav.terms a {
+    font-size: 14px;
+  }
 }
